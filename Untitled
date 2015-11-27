@@ -1,0 +1,17 @@
+Python 2.7.6 (default, Sep  9 2014, 15:04:36) 
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> ================================ RESTART ================================
+>>> 
+
+Traceback (most recent call last):
+  File "/Users/sussmanz/Google Drive/12th Grade/Cloud Chamber/main.py", line 10, in <module>
+    fgbg = cv2.BackgroundSubtractorMOG()
+AttributeError: 'module' object has no attribute 'BackgroundSubtractorMOG'
+>>> ','.join(cv2).find("BackgroundSubtractor")
+
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    ','.join(cv2).find("BackgroundSubtractor")
+TypeError
+>>> ','.join(dir(cv2)).find("BackgroundSubtractor")
