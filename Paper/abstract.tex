@@ -1,0 +1,65 @@
+\documentclass[notitlepage]{article}
+\author{Zachary Sussman}
+\title{Automatic Particle Detection in Cloud Chambers}
+\date{}
+
+\usepackage{amsmath}
+\usepackage[version=3]{mhchem}
+\usepackage{chemfig}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\sisetup{
+	free-standing-units=true,
+	space-before-unit=false,
+	use-xspace=true
+}
+
+\usepackage[procnames]{listings}
+\usepackage{color}
+
+\usepackage{hanging}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[title,titletoc,toc]{appendix}
+
+\usepackage{setspace}
+
+%\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+ 
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
+
+
+
+\maketitle
+
+\pagenumbering{gobble}
+\begin{abstract}
+\noindent
+\textbf{Introduction:} A cloud chamber is a user-friendly particle detector utilized for smaller-scale research and educational purposes.  One major limitation of this type of device is the lack of accessible automated programs to detect and analyze the particles. I attempted to rectify this situation by creating my own algorithms to detect and evaluate subatomic particle tracks in videos of functioning cloud chambers.
+\\ \textbf{Methods:} I constructed a 10 gallon diffusion cloud chamber and collected 5 hours of video.  Using the OpenCV video-processing library for Python, I created a program that analyzed the video and generated a database of track events and properties. The program runs frame by frame, finding groups of foreground pixels, which correspond to tracks.  By matching tracks in sequential frames, a database of events is built. Each type of subatomic particle leaves a different path in the chamber, so by evaluating track characteristics including aspect ratio, length, and intensity, I can identify particle type and approximate its energy.
+\\ \textbf{Results:} With just 200 lines of Python, the program processed tracks at a 90\% accuracy rate, and identified beta particle energies within 0.5-1 \kilo{}\electronvolt and alpha particle energies within 10-20 \kilo{}\electronvolt. 
+\\ \textbf{Conclusion:} With fairly straightforward algorithms, my program can identify particle tracks in cloud chambers with good accuracy. The automation of this cost-effective particle detector removes a barrier to more widespread use.
+
+
+\end{abstract}
+
+\end{document}
